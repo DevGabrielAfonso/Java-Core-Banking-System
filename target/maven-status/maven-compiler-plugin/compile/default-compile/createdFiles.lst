@@ -1,9 +1,0 @@
-com\mycompany\javabank\controller\DepositController.class
-com\mycompany\javabank\BankService.class
-com\mycompany\javabank\controller\LoginController.class
-com\mycompany\javabank\App.class
-com\mycompany\javabank\Balance.class
-com\mycompany\javabank\controller\MenuController.class
-module-info.class
-com\mycompany\javabank\SystemInfo.class
-com\mycompany\javabank\controller\WithdrawController.class
