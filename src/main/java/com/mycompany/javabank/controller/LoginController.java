@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import com.mycompany.javabank.App;
+import java.io.IOException;
 
 /**
  * FXML Controller class
@@ -24,7 +26,7 @@ public class LoginController implements Initializable {
     private PasswordField inputPassword;
     
     @FXML
-    private boolean inputVerifier(){
+    public boolean inputVerifier() throws IOException{
         if(inputEmail.getText().trim().isEmpty() || inputPassword.getText().trim().isEmpty()){
             return false;
         } else {
@@ -33,8 +35,8 @@ public class LoginController implements Initializable {
         }
     }
     
-    private void accessGranted(){
-        System.out.println("Acesso garantido!");
+    private void accessGranted() throws IOException{
+        App.changeScreen("Menu");
     }
     
     @Override

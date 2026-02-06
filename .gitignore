@@ -1,3 +1,4 @@
-/target
-/nbproject/private
-/dist
+target/
+dist/
+nbproject/private/
+*.log

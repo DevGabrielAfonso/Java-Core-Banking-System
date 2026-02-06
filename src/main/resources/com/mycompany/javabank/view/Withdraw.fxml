@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.mycompany.javabank.WithdrawController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.javabank.controller.WithdrawController">
    <children>
       <Label layoutX="240.0" layoutY="31.0" text="Withdraw">
          <font>
@@ -19,24 +18,29 @@
             <Font name="System Bold" size="64.0" />
          </font>
       </Label>
-      <Button layoutX="325.0" layoutY="269.0" mnemonicParsing="false" text="Next">
+      <Button fx:id="withdrawNext" layoutX="346.0" layoutY="269.0" mnemonicParsing="false" onAction="#withdrawNext" text="Next">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
       </Button>
-      <Button layoutX="108.0" layoutY="269.0" mnemonicParsing="false" text="Cancel">
+      <Button fx:id="withdrawCancel" layoutX="129.0" layoutY="269.0" mnemonicParsing="false" onAction="#withdrawCancel" text="Cancel">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
       </Button>
-      <TextField layoutX="378.0" layoutY="118.0" prefHeight="92.0" prefWidth="165.0" text="0.00">
+      <TextField fx:id="withdrawValue" layoutX="378.0" layoutY="118.0" prefHeight="92.0" prefWidth="165.0" text="0.00">
          <font>
-            <Font name="System Bold" size="43.0" />
+            <Font name="System Bold" size="31.0" />
          </font>
       </TextField>
       <Label layoutX="260.0" layoutY="118.0" prefHeight="93.0" prefWidth="106.0" text="USD$">
          <font>
-            <Font size="41.0" />
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorFeedback" layoutX="378.0" layoutY="95.0" textFill="RED">
+         <font>
+            <Font name="DejaVu Sans Mono Bold" size="12.0" />
          </font>
       </Label>
    </children>

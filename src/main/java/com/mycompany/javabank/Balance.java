@@ -5,19 +5,20 @@
 package com.mycompany.javabank;
 
 public class Balance {
-    private static double balance = 0;
+    private static double balance = 100.00;
     
     public static double getBalance(){
         return balance;
     }
     
     public static void deposit(double value){
-        balance = balance + value;
+        if(value > 0){
+            balance = balance + value;
+        }
     }
     
     public static void withdraw(double value){
-        if (balance < value){
-        } else {
+        if (value > 0 && balance >= value){
             balance = balance - value;
         }
         
