@@ -17,12 +17,9 @@ public class App extends Application {
     @Override
     public void start(Stage firstStage) throws IOException {
         stage = firstStage;
-        
         stage.setTitle("JavaBank - Login");
         changeScreen("Login");
         stage.show();
-        
-        
     }
 
     public static void changeScreen(String fxml) throws IOException{
