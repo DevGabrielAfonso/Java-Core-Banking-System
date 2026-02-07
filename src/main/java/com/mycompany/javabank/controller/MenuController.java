@@ -14,6 +14,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -23,16 +25,7 @@ import javafx.scene.control.Label;
 public class MenuController implements Initializable {
 
     @FXML
-    private Button deposit;
-    
-    @FXML
-    private Button withdraw;
-    
-    @FXML
-    private Button exit;
-    
-    @FXML
-    private Button toggleBalanceView;
+    private ImageView eyeIcon;
     
     @FXML
     private Label labelBalance;
@@ -43,9 +36,16 @@ public class MenuController implements Initializable {
         toggleView = !toggleView;
         if (toggleView){
             labelBalance.setText("USD$ *.**");
+            toggleBalanceIcon("closed-eye");
             return;
         }
+        toggleBalanceIcon("open-eye");
         updateBalance();
+    }
+    
+    public void toggleBalanceIcon(String icon){
+        Image img = new Image(getClass().getResource("/svg/"+icon+".png").toExternalForm());
+        eyeIcon.setImage(img);
     }
     
     public void depositMenu() throws IOException{
@@ -67,6 +67,7 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         updateBalance();
+        toggleBalance();
     }    
     
 }
